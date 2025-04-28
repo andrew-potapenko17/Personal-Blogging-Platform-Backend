@@ -1,9 +1,9 @@
 def individual_serial(article) -> dict:
     return {
-        "id": int(article["_id"]),
-        "title" : article["_title"],
-        "name": article["_name"],
-        "date": article["_date"],
+        "id": str(article["_id"]),
+        "title" : article["title"],
+        "description": article["description"],
+        "date": article["date"],
     }
 
 def list_serial(articles) -> list:
