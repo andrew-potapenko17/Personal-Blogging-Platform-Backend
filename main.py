@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from models import Article, UpdatedArticle
+import mongoManager
 
 app = FastAPI()
 
@@ -10,6 +11,8 @@ articles = {
         "date" : "April 28",
     },
 }
+
+mongoManager.ping()
 
 @app.get("/")
 async def root():

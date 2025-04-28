@@ -1,2 +1,8 @@
 # virtual enviorment
 venv
+
+# __pycache__
+__pycache__
+
+# config file
+backendConfig
