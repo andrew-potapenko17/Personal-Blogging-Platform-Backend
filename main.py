@@ -1,8 +1,20 @@
 from fastapi import FastAPI
 from models import Article, UpdatedArticle
 import mongoManager as db
+from backendConfig import TESTING
 
 app = FastAPI()
+
+if TESTING:
+    from fastapi.middleware.cors import CORSMiddleware
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 @app.get("/articles")
 def getArticles():
