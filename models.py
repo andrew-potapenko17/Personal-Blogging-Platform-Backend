@@ -9,3 +9,4 @@ class Article(BaseModel):
 class UpdatedArticle(BaseModel):
     title : Optional[str] = None
     description : Optional[str] = None
+    date : Optional[str] = None

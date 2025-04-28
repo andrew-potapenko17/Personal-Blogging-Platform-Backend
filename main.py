@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from models import Article, UpdatedArticle
 import mongoManager
+from route import router
 
 app = FastAPI()
 
@@ -12,11 +13,7 @@ articles = {
     },
 }
 
-mongoManager.ping()
-
-@app.get("/")
-async def root():
-    return {"message" : "Personal Blog Platform"}
+app.include_router(router)
 
 @app.get("/articles")
 def getArticles():
