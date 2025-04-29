@@ -1,4 +1,5 @@
 fastapi
 uvicorn[standard]
 pydantic
-pymongo
+pymongo>=3.11
+dnspython
