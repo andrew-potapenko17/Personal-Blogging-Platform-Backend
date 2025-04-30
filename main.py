@@ -16,6 +16,10 @@ if TESTING:
         allow_headers=["*"],
     )
 
+@app.get("/")
+def welcome():
+    return {"message" : "Welcome To Personal Blog API"}
+
 @app.get("/articles")
 def getArticles():
     return db.get_articles()
